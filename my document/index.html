@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <style>
+      .tinggi1 {
+        margin-top: 20px;
+      }
+
+      .tinggi2 {
+        margin-top: 88px;
+      }
+
+      .data {
+        border: 1px solid black; 
+        border-radius:10px;
+         padding:20px; 
+      }
+      
+      .btn {
+        background-color: white;
+        color: white;
+        display: flex;
+        margin-top: 30px;
+      }
+
+      .hilang:hover {
+        cursor: pointer;
+        display: none;
+        
+      }
+
+    </style>
+    <title>Zall Document</title>
+</head>
+<body>
+    
+    <div class="accordion accordion-flush" id="accordionFlushExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              # Script Dino Chrome
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+                <div class="data "> 
+                 <p class="hilang" id="satu"> // TEMBUS RINTANGAN <br><br>
+                
+                Runner.prototype.gameOver = () => {}; </p> </div><br><br>
+                
+                <div class="data "> <p class="hilang" id="dua"> // ADJUST SPEED <br><br>
+                
+                Runner.instance_.setSpeed (100);</p> </div><br><br>
+               
+               
+                <div class="data "> <p class="hilang" id="tiga"> // ADJUST KETINGGIAN <br><br>
+                
+                Runner.instance_.tRex.groundYPos = (10);</p> </div><br><br>
+                
+                <div class="data "> <p class="hilang" id="empat"> // AUTO PILOT <br><br>
+                
+                const autoPlayLoop = function () {
+                const JUMP_SPEED = 100; 
+                const DISTANCE_BEFORE_JUMP = 100;
+                const instance = window.Runner.instance_;
+                const tRex = instance.tRex;
+            
+                if (tRex.jumping) {
+                    requestAnimationFrame(autoPlayLoop);
+                    return ;
+                };
+            
+                const tRexPos = tRex.xPos;
+                const obstacles = instance.horizon.obstacles;
+                const nextObstacle = obstacles.find(o => o.xPos > tRexPos);
+            
+                if (nextObstacle && (nextObstacle.xPos - tRexPos) <= DISTANCE_BEFORE_JUMP ) {
+                    tRex.startJump(JUMP_SPEED)
+                };
+            
+                requestAnimationFrame(autoPlayLoop);
+
+                }; <br> <br> <span>Run ini <br> requestAnimationFrame(autoPlayLoop);</span> </p> </div><br><br>
+               
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+              # Data 2
+            </button>
+          </h2>
+          <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body"> koshongg</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+              # Data 3
+            </button>
+          </h2>
+          <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">koshongg </div>
+          </div>
+        </div>
+      </div>
+
+
+      <span class="span"><button class="btn" id="btn" onclick="tampil()">Normal</button></span>
+      <div class="tinggi1" id="adjs" style="display: flex; align-items:center; justify-content:center;" >
+
+          <a href="../index.html"> <button style="background-color: blue; border-radius:5px; color:white;"  onmouseover="this.style.background='purple' ; this.style.color='white';this.style.transition='.5s' ;this.style.fontsize='larger'" onmouseout="this.style.background='blue'">Back to home</button> </a>
+        </div>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+
+
+       <script>
+
+          const btn = document.getElementById('btn');
+          let adjs = document.getElementById('adjs');
+          let satu = document.getElementById('satu');
+          let dua = document.getElementById('dua');
+          let tiga = document.getElementById('tiga');
+          let empat = document.getElementById('empat');
+
+          function tampil () {
+            satu.classList.toggle ("hilang");
+            dua.classList.toggle ("hilang");
+            tiga.classList.toggle ("hilang");
+            empat.classList.toggle ("hilang");
+            adjs.classList.toggle ("tinggi1");
+            adjs.classList.toggle ("tinggi2");
+            btn.style.display="none";
+            alert ('Berhasil Masuk Mode Normal');
+          }
+
+       </script>
+</body>
+</html>
